@@ -5,6 +5,8 @@ enum PlayerState {
 	walk,
 	jump
 }
+
+const PONG = preload("res://entities/pong.tscn")
 const BUBBLE = preload("res://entities/bubble.tscn")
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -31,6 +33,13 @@ func _physics_process(delta: float) -> void:
 		new_bubble.position = position
 		new_bubble.direction = last_direction
 		add_sibling(new_bubble)
+		
+	if Input.is_action_just_pressed("pong"):
+		var new_pong = PONG.instantiate()
+		new_pong.position = position
+		var pong_rig: RigidBody2D = new_pong
+		pong_rig.apply_impulse(Vector2(last_direction * 150, -150))
+		add_sibling(new_pong)
 
 	match status:
 		PlayerState.idle:

@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://2ygebuqaeoop"]
+
+[ext_resource type="Texture2D" uid="uid://67kiamiroq0h" path="res://sprites/Projectile_Bubble (8 x 8).png" id="1_jolkf"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_jolkf"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8r0im"]
+atlas = ExtResource("1_jolkf")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pnksc"]
+atlas = ExtResource("1_jolkf")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_epl56"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8r0im")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pnksc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jolkf"]
+size = Vector2(8, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pnksc"]
+size = Vector2(8, 8)
+
+[node name="RigidBody2D" type="RigidBody2D"]
+collision_layer = 0
+physics_material_override = SubResource("PhysicsMaterial_jolkf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_epl56")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jolkf")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_pnksc")

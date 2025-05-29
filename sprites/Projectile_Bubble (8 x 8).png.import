@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://67kiamiroq0h"
-path="res://.godot/imported/Projectile_Bubble (8 x 8).png-3f12ded5e421d02e35514aec67c67449.ctex"
+path="res://.godot/imported/Projectile_Bubble (8 x 8).png-4e9aa7e676ff422c11a2a7195f2ecd8c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Effects/Projectile_Bubble (8 x 8).png"
-dest_files=["res://.godot/imported/Projectile_Bubble (8 x 8).png-3f12ded5e421d02e35514aec67c67449.ctex"]
+source_file="res://sprites/Projectile_Bubble (8 x 8).png"
+dest_files=["res://.godot/imported/Projectile_Bubble (8 x 8).png-4e9aa7e676ff422c11a2a7195f2ecd8c.ctex"]
 
 [params]
 
